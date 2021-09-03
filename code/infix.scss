@@ -1,0 +1,148 @@
+@font-face{
+    font-family:myfont;
+    src:url("../fonts/Quicksand-Light.ttf");
+}
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:myfont;
+}
+html{
+    font-size:62.5%;
+}
+
+@mixin center{
+    display:flex;
+    justify-content: center;
+    align-items:center;
+}
+@mixin common_button{
+    border:none;
+    outline:none;
+    padding:0.7rem;
+    width:9rem;
+    font-weight:bold;
+    font-size:1.3rem;
+    border-radius:0.3rem;
+    @content;
+}
+@mixin  common_input {
+    border:none;
+    outline:none;
+    padding:0.7rem;
+    font-size:1.4rem;
+    font-weight:bold;
+    border-radius:0.3rem;
+    @content;
+}
+.main_container{
+    width:100%;
+    height:100vh;
+    // padding:1.3rem;
+    @include center;
+}
+.content_container
+{
+    width:70%;
+    // height:auto;
+    overflow:auto;
+    position:relative;
+    height:80%;
+
+    // for small screens
+    @media (max-width:800px){
+        width:90%;
+        height:70%;
+    }
+    @at-root
+    // content_heading
+    .content_heading{
+        color:white;
+        text-align:center;
+        font-size:4rem;
+    }
+
+    // content_body
+    @at-root
+    .content_body{
+        margin:2rem 0rem 0rem 0rem;
+        padding:3rem;
+
+        // content_body_input
+        .content_body_input{
+            width:100%;
+            input{
+                width:100%;
+                @include common_input;
+            }
+            .error{
+                display:none;
+                width:100%;
+                margin-top:1rem;
+                padding:0.3rem 0.2rem 0.3rem 0.4rem;
+                font-size:1rem;
+                color:white;
+                background-color:transparentize(red,0.6);
+            }
+            @at-root
+            .error .err{
+                padding-left:0.5rem;
+            }
+        }
+
+        //content_body_buttons
+        
+        .content_body_buttons{
+            width:100%;
+            @include center;
+            margin:2rem 0rem 2rem 0rem;
+
+            button{
+                @include common_button;
+            }
+            .postfix_button{
+                margin-right:0.8rem;
+            }
+            
+        }
+       
+        // content_body_output
+        .content_body_output{
+            width:100%;
+            text-align:center;
+            margin:4rem 0rem 2rem 0rem;
+
+            .content_body_output_text{
+                font-size:2.5rem;
+            }
+        }
+
+        table{
+            visibility:hidden;
+            width:100%;
+            table-layout: fixed;
+            
+            tr{
+                text-align:center;
+                cursor:pointer;
+            }
+            tr td,th{
+                font-size:1.2rem;
+            }
+        }
+    }
+
+    // content_footer
+    @at-root
+    .content_footer{
+        width:100%;
+        position: fixed;
+        bottom: 0;
+        left:0;
+        padding:0.6rem;
+        font-size:1.2rem;
+        text-align:center;
+        // background-color: white;
+    }
+}

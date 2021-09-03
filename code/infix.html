@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infix To PreFix/PostFix Converter</title>
+    <link rel="icon" href="../images/infix.png" type="image/png">
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <link href="infix.css" rel="stylesheet">
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
+    <title>Darshan Balar</title>
+</head>
+<body class="bg-dark">
+    <div class="main_container">
+        <div class="container content_container bg-dark shadow-lg">
+            <!-- content_heading -->
+            <div class="content_heading pt-5 pl-4">
+                Infix To <span class="text-warning choice">Postfix</span>
+                <hr class="bg-light w-25 mx-auto">
+
+            </div>
+
+            <!-- content_body -->
+            <div class="content_body">
+                <!-- content_body_inputs -->
+                <div class="content_body_input">
+                    <input type="text" name="infix" id="infix" placeholder="Enter Infix " class="shadow-lg" autofocus>
+                    <div class="error">
+                        <strong>Error : </strong><span class="err"></span>
+                    </div>
+                </div>
+                <!-- content-body_buttons -->
+                <div class="content_body_buttons">
+                    <button class="postfix_button shadow-lg bg-warning" value = "post" >PostFix</button>
+                    <button class="prefix_button" value = "pre" >PreFix</button>
+                </div>
+                <!-- content_body_output -->
+                <div class="content_body_output ">
+                    <div class="content_body_output_text text-warning " id = "output">
+                        
+                    </div>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="table table-sm table-dark table-bordered table-striped table-hover" id = "table">
+                        <thead id = "thead">
+                            
+                        </thead>
+                        <tbody id = "tbody">
+                                
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <!-- content_body_footer -->
+            <div class="content_footer bg-dark shadow-lg text-white">
+            - Developed By <span class="text-warning">D Creators</span>
+            </div>
+
+        </div>
+    </div>
+    
+    <script  src = "infix.js" ></script>
+</body>
+</html>
